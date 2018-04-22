@@ -1,6 +1,9 @@
 var express = require ("express");
 var ejs = require ("ejs");
+var bodyParser = require ("body-parser");
 var app = express();
+app.use(bodyParser.urlencoded({extended: true}));
+
 //so that for the template we dont have to type .ejs everytime
 app.set("view engine", "ejs");
 app.get('/', function(req,res){
