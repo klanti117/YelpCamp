@@ -1,10 +1,33 @@
 <% include partials/header %>
-<a href="/campgrounds/new"> Add a new Campground</a>
-<h1>This is campgrouds page</h1>
-<% campgrounds.forEach(function(campgrounds){ %>
-  <div>
-    <h4><%= campgrounds.name %></h4>
-    <img src="<%= campgrounds.image %>">
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">This is campgrouds page</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <a class="btn btn-info btn-lg" href="/campgrounds/new" role="button">Add a new campground</a>
+    </div>
   </div>
-<% }); %>
+  <div class="row text-center" >
+  <% campgrounds.forEach(function(campgrounds){ %>
+    <div class="col-md-3 col-sm-6">
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="<%= campgrounds.image %>/100px200/" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= campgrounds.name %></h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- end of col-md-3 -->
+  <% }); %>
+  </div>
+  <!-- end of row text center -->
+</div>
+<!-- end of class main container  -->
+
+
+
 <% include partials/footer %>
